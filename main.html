@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Professores - Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+        input[type="text"], select {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Avaliação de Professores</h1>
+    <p>Encontre o professor ideal para a sua matrícula</p>
+</header>
+
+<main>
+    <h2>Pesquisar Professor</h2>
+
+    <!-- Campo para nome -->
+    <input type="text" id="professorNome" placeholder="Nome do Professor" />
+
+    <!-- Campo para curso -->
+    <input type="text" id="curso" placeholder="Curso" />
+
+    <!-- Campo para departamento -->
+    <select id="departamento">
+        <option value="">Selecione o Departamento</option>
+        <option value="cienciasHumanas">Ciências Humanas</option>
+        <option value="engenharia">Engenharia</option>
+        <option value="biologia">Biologia</option>
+        <option value="matematica">Matemática</option>
+        <option value="medicina">Medicina</option>
+        <!-- Adicionar outros departamentos conforme necessário -->
+    </select>
+
+    <!-- Botão de pesquisa -->
+    <br />
+    <button onclick="pesquisarProfessor()">Pesquisar</button>
+
+    <p id="resultadoPesquisa"></p>
+
+    <!-- Simulação de resultado para fins de visualização -->
+    <div id="professorResultado" style="display: none;">
+        <h3>Professor Encontrado:</h3>
+        <p>Nome: <span id="nomeProfessorResultado"></span></p>
+        <p>Curso: <span id="cursoProfessorResultado"></span></p>
+        <p>Departamento: <span id="departamentoProfessorResultado"></span></p>
+    </div>
+</main>
+
+<footer>
+    <p>Copyright © 2024 - Avaliação de Professores</p>
+</footer>
+
+<script>
+    // Função para pesquisar o professor - simulação
+    function pesquisarProfessor() {
+        var nome = document.getElementById("professorNome").value;
+        var curso = document.getElementById("curso").value;
+        var departamento = document.getElementById("departamento").value;
+        
+        // Simulação de uma busca
+        if (nome || curso || departamento) {
+            document.getElementById("professorResultado").style.display = "block";
+            document.getElementById("nomeProfessorResultado").textContent = nome || "Nome não informado";
+            document.getElementById("cursoProfessorResultado").textContent = curso || "Curso não informado";
+            document.getElementById("departamentoProfessorResultado").textContent = departamento || "Departamento não informado";
+        } else {
+            document.getElementById("resultadoPesquisa").textContent = "Por favor, insira ao menos um critério de pesquisa.";
+        }
+    }
+</script>
+
+</body>
+</html>
